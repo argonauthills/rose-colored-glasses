@@ -1,11 +1,9 @@
-function colorIt() {
-    console.log("good")
-    document.body.setAttribute("style", "-webkit-filter: grayscale(50%);")
-    console.log("still good")
+refreshFilter()
+
+function refreshFilter() {
+    chrome.runtime.sendMessage({action:"getFilter"}, function(message) {
+        var filter = message.filter
+        document.body.setAttribute("style", "-webkit-filter:"+filter)
+        console.log("got message", message)
+    })
 }
-
-colorIt()
-
-
-
-console.log("most good")

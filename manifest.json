@@ -10,8 +10,13 @@
     "default_title": "Rose-colored glasses"
   },
 
+  "background": {
+    "scripts": ["state.js"],
+    "persistent": false
+  },
+
   "content_scripts": [{
-    "matches": ["http://www.google.com/*", "https://www.google.com/*"],
+    "matches": ["<all_urls>"],
     "js": ["color-it.js"]
   }],
 
