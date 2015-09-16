@@ -1,6 +1,4 @@
-console.log("state")
-
-var filter = "invert(80%)"
+var filter = ''
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.action == "getFilter") {
@@ -13,7 +11,5 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 })
 
 function filterResponse(filter) {
-    return {
-        payload: {filter: filter}
-    }
+    return { payload: {filter: filter} }
 }
