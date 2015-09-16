@@ -7,7 +7,12 @@
 
   "browser_action": {
     "default_icon": "temp-icon.png",
-    "default_popup": "popup.html"
+    "default_title": "Rose-colored glasses"
+  },
+
+  "background": {
+    "scripts": ["main.js"],
+    "persistent": false
   },
   "permissions": [
     "activeTab",
