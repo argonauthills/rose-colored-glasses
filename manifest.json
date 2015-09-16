@@ -10,10 +10,11 @@
     "default_title": "Rose-colored glasses"
   },
 
-  "background": {
-    "scripts": ["main.js"],
-    "persistent": false
-  },
+  "content_scripts": [{
+    "matches": ["http://www.google.com/*", "https://www.google.com/*"],
+    "js": ["color-it.js"]
+  }],
+
   "permissions": [
     "activeTab",
     "https://ajax.googleapis.com/"
