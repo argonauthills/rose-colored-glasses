@@ -1,13 +1,19 @@
 console.log("state")
 
-var filter = "grayscale(50%)"
+var filter = "invert(80%)"
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.action == "getFilter") {
-        sendResponse({filter: filter})
+        sendResponse(filterResponse(filter))
     }
     if (request.action == "setFilter") {
-        filter = filter
-        sendResponse({filter:filter})
+        filter = request.payload.filter
+        sendResponse(filterResponse(filter))
     }
 })
+
+function filterResponse(filter) {
+    return {
+        payload: {filter: filter}
+    }
+}
